@@ -22,7 +22,7 @@ const Home = () => {
 
     try{
       const enhancedimg = await enhanserAPI(file);
-      setEnhancedImg(enhancedimg.image);
+      setEnhancedImg(enhancedimg);
       setLoading(false)
     }catch(err){
       console.log(err)
@@ -35,12 +35,6 @@ const Home = () => {
       <Navbar/>
 
 
-
-
-      <div className='flex flex-col items-center justify-center'>
-      <h1 className='text-2xl font-bold mb-3'>AI Image Enhancer</h1>
-      <p className='text-sm'>Enhance your images with AI</p>
-      </div>
         <ImgUpload handleImgUpload={handleImgUpload} />
         <ImgPreview loading={loading} uploadImg={uploadImg} enhancedImg={enhancedImg}/>
     </>
